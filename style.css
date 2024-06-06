@@ -1,0 +1,115 @@
+:root {
+    --bg-img: url(https://4kwallpapers.com/images/wallpapers/blue-background-2732x2732-10208.jpg);
+    --color-primary: #367EDF;
+    --color-secondary: #5a5e97;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: rgba(49, 52, 100, 0.5);
+    background-image: var(--bg-img);
+    background-blend-mode: hue;
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+    color: white;
+    animation: bg ease-in-out infinite alternate 3s;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form, .info {
+    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    width: 320px;
+    padding: 2rem;
+    border-radius: 1rem;
+    background: rgba(253, 253, 253, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1.5px solid rgba(24, 24, 24, 0.3);
+    animation: inicio ease-in both 600ms;
+}
+
+form input, .info a {
+    width: 100%;
+    color: white;
+    padding: 10px;
+    border: none;
+    outline: none;
+    transition: all ease 200ms;
+    background: none;
+    border-bottom: solid #ffffff43 1px;
+    font-size: 1.2em;
+}
+
+form input::placeholder{
+    color: rgba(255, 255, 255, 0.5);
+}
+form input:focus {
+    border-color: white;
+}
+
+form input[type="submit"], .info a {
+    text-decoration: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    background: var(--color-primary);
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+form input[type="submit"]:hover, .info a:hover {
+    background: var(--color-secondary);
+}
+
+.info img{
+    width: 100px;
+}
+.info p{
+    align-self: flex-start;
+    color: black;
+}
+.info p strong{
+    font-size: 1.2em;
+    color: white;
+}
+
+
+
+@keyframes inicio {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes bg {
+    from{
+        background-color: rgba(49, 52, 100, 0.5);
+    }
+    to{
+        background-color: rgba(49, 52, 100, 0.7);
+    }
+}
+
